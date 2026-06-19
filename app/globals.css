@@ -1,0 +1,100 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@theme inline {
+  --font-heading: var(--font-geist-sans), 'Geist Fallback';
+  --font-sans: var(--font-geist-sans), 'Geist Fallback';
+  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-deep: var(--primary-deep);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
+  --radius-3xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  --radius: 0.75rem;
+
+  /* Off-white paper background — the "mailer" surface */
+  --background: #f1f4fb;
+  --foreground: #1b1f2a;
+
+  --card: #ffffff;
+  --card-foreground: #1b1f2a;
+  --popover: #ffffff;
+  --popover-foreground: #1b1f2a;
+
+  /* Brand navy */
+  --primary: #0d2b6e;
+  --primary-foreground: #ffffff;
+  --primary-deep: #081d4d;
+
+  --secondary: #eaeefb;
+  --secondary-foreground: #0d2b6e;
+
+  --muted: #eef1f9;
+  --muted-foreground: #5b6478;
+
+  /* Postmark gold — direct-mail accent */
+  --accent: #c2902f;
+  --accent-foreground: #2a1d05;
+
+  --border: rgba(13, 43, 110, 0.1);
+  --input: rgba(13, 43, 110, 0.16);
+  --ring: #0d2b6e;
+
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Perforated direct-mail edge */
+.perforated-edge {
+  background-image: radial-gradient(
+    circle at center,
+    var(--background) 0 4px,
+    transparent 4px
+  );
+  background-size: 14px 14px;
+  background-repeat: repeat-x;
+  background-position: center;
+}
